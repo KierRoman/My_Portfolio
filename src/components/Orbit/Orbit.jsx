@@ -25,8 +25,8 @@ function Orbit() {
             cx="100"
             cy="100"
             r={radius}
-            stroke="rgba(150, 177, 2, 0.5)"
-            strokeWidth="2"
+            stroke="rgba(243, 235, 5, 0.3)"
+            strokeWidth="1.5"
             fill="none"
           /> 
         </svg>
