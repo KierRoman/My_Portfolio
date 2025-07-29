@@ -38,7 +38,7 @@ let AboutMe = () => {
                 className={`firstlocationContainer ${locationVisible1 ? "slide-in" : ""}`}>           
               <div id="about-me-text">
                 Hello! I'm a passionate web developer with a desire to build, sustain, and maintain web applications.
-                I have a strong foundation in JavaScript, React, Express, and Node.js, and experience with MongoDB and PostgreSQL.
+                I have a strong foundation in JavaScript, React, Express, and Node.js, and experience with Python, MongoDB and PostgreSQL.
               </div>
           </div>
           <div 
