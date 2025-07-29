@@ -1,0 +1,99 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.AppContainer {
+  background-color: rgba(1, 1, 50, 0.641);
+  border: 2px solid rgb(33, 3, 113);
+  width: 100vw;
+}
+
+.App {
+  height: 90vh;
+  border-radius: 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  
+}
+
+.orbitContainer {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 5vw; */
+}
+
+.nameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5em;
+}
+
+#locationContainer {
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+}
+
+/* #location {
+  animation: slideIn 2s ease-in-out;
+} */
+
+#globe {
+  height: 60px;
+  width: 60px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-top: 10px;
+  animation: rotateOnAxis 5s linear infinite;
+  
+}
+
+/* Remove always-on animation from #location */
+#locationContainer {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 2s ease-out;
+  display: flex;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+}
+
+/* Slide in effect when visible */
+#locationContainer.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+@keyframes rotateOnAxis {
+  0%{
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+
+/* @keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+} */
