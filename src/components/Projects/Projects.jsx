@@ -41,8 +41,10 @@ let Projects = () => {
                     </div>
                     </div>
                 <div className='item'style={{'--position': 4}}>
+                    <a href="https://github.com/KierRoman/Fitness-CRUD-App">
                     <img src='images/OkayestFitness.png' alt='Okayest Fitness App Screenshot'>
                     </img>
+                    </a>
                     <div className='projectText'>
                         <h4>Okayest Fitness</h4>
                         <p>App that helps you track your fitness goals!</p>

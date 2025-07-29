@@ -25,10 +25,10 @@ function Orbit() {
             cx="100"
             cy="100"
             r={radius}
-            stroke="rgba(255,255,255,0.09)"
+            stroke="rgba(150, 177, 2, 0.5)"
             strokeWidth="2"
             fill="none"
-          />
+          /> 
         </svg>
         <div className="circle">
           <div className="orbiting-text">

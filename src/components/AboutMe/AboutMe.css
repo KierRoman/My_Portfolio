@@ -1,0 +1,76 @@
+.about-me {
+    height: 750px;
+    width: 100%;
+    display: flex;
+    gap: 10%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(1, 1, 50, 0.641);
+}
+h1 {
+    margin-top: 2.5em;
+    text-shadow: 0 12px 20px rgba(6, 2, 241, 0.912);
+
+}
+
+.about-me-content {
+    margin-top: 5em;;
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+}
+
+#about-me-text {
+    top: 50px;
+    left: 25px;
+    position: relative;
+    width: 40%;
+    font-size: 15px;
+    margin-bottom: 10px;
+
+}
+
+
+
+#about-me-text2 {
+    position: absolute;
+    bottom: -250px;
+    right: 15px;
+    width: 40%;
+    font-size: 15px;
+    padding: 5px;
+}
+/* Remove always-on animation from #location */
+.secondlocationContainer
+{
+    opacity: 0;
+  transform: translateX(-100%);
+  transition: all 2s ease-out;
+  display: flex;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+}
+.firstlocationContainer
+ {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1.5s ease-out;
+  display: flex;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+}
+
+/* Slide in effect when visible */
+.firstlocationContainer.slide-in
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+.secondlocationContainer.slide-in
+ {
+  opacity: 1;
+  transform: translateX(0);
+}

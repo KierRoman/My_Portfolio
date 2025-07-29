@@ -1,22 +1,40 @@
-import React from 'react';
-import './Header.css';
+import React from "react";
+import "./Header.css";
 
 let Header = () => {
   return (
-    <header className="header">
-      <div className="header-content">
-        <div className='header-right'>
-            <nav className="header-nav">
-              <div className="nav-links">
-                <div id="nav1"><a href="#about">About</a></div>
-                <div id="nav2"><a href="#projects">Projects</a></div>
-                <div id="nav3"><a href="#contact">Contact</a></div>
-              </div>
-            </nav>
+    <div className="headerContainer">
+      <div className="header">
+        <div className="items item1">
+          <img src="images/HTML.png" alt="HTML Logo" />
+        </div>
+        <div className="items item2">
+          <img src="images/Javascript.png" alt="Javascript Logo" />
+        </div>
+        <div className="items item3">
+          <img src="images/CSS.png" alt="CSS Logo" />
+        </div>
+        <div className="items item4">
+          <img src="images/React.png" alt="React Logo" />
+        </div>
+        <div className="items item5">
+          <img src="images/NodeJS.png" alt="NodeJS Logo" />
+        </div>
+        <div className="items item6">
+          <img src="images/MongoDB.png" alt="MongoDB Logo" />
+        </div>
+        <div className="items item7">
+          <img src="images/PostgreSQL.png" alt="PostgreSQL Logo" />
+        </div>
+        <div className="items item8">
+          <img src="images/Django.png" alt="Django Logo" />
+        </div>
+        <div className="items item9">
+          <img src="images/Python.png" alt="Python Logo" />
         </div>
       </div>
-    </header>
+    </div>
   );
-}
+};
 
 export default Header;

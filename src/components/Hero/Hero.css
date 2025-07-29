@@ -1,14 +1,7 @@
 
-/* body {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  position: relative
-} */
 
 .HeroContainer {
   background-color: rgba(1, 1, 50, 0.641);
-  border: 2px solid rgb(33, 3, 113);
   width: 100vw;
 }
 
@@ -29,7 +22,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-left: 5vw; */
 }
 
 .nameContainer {
@@ -46,9 +38,6 @@
   align-items: center;
 }
 
-/* #location {
-  animation: slideIn 2s ease-in-out;
-} */
 
 #globe {
   height: 60px;
@@ -86,14 +75,3 @@
     transform: rotate3d(0, 1, 0, 360deg);
   }
 }
-
-/* @keyframes slideIn {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-} */
