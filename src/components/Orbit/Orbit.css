@@ -13,7 +13,7 @@
 /* SVG orbit ring */
 .orbit-path {
   position: absolute;
-  top: 67.5%;
+  top: 77.5%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -23,7 +23,7 @@
 /* Center point of the orbit */
 .circle {
   position: absolute;
-  top: 67.5%;
+  top: 77.5%;
   left: 50%;
   width: 0;
   height: 0;
@@ -107,9 +107,6 @@
   0% {
     transform: rotate(0deg);
   }
-  /* 25% {
-    transform: rotate(-45deg);
-  } */
   25% {
     transform: rotate(-90deg);
   }
@@ -126,10 +123,10 @@
 
 @media (max-width: 600px) {
   .circle {
-    top: 85%;
+    top: 70%;
   }
   .orbit-path {
-    top: 85%;
+    top: 70%;
   }
   .pos-0 {
     transform: rotate(0deg) translate(30px);

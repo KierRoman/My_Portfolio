@@ -6,10 +6,10 @@ let Footer = () => {
         <>
         <div className="footerContainer">
             <div id='work'>Let's work!</div>
-            <div id="number">
-                <div id="phone">📞</div> 
-                912 - 272 - 3249</div>
-            <div>📧 kierroman@gmail.com</div>
+            <div id="email"> 
+                <div id="mail">📧</div> 
+                kierroman@gmail.com
+                </div>
         </div>
         </>
     )

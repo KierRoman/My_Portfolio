@@ -12,17 +12,17 @@
     font-size: 50px;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
-#number {
+#email {
     display: flex;
-    gap: 5px;
+    gap: 10px;
 }
 
-#phone {
+#mail {
     display: inline-block;
     transform-origin: center;
 }
 
-#phone:hover {
+#mail:hover {
     animation: rock .6s ease;
 }
 

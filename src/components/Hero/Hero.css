@@ -3,6 +3,7 @@
 .HeroContainer {
   background-color: rgba(1, 1, 50, 0.641);
   width: 100vw;
+  padding-bottom: 5%;
 }
 
 .Hero {
@@ -29,7 +30,33 @@
   flex-direction: column;
   align-items: center;
   margin-top: 5em;
+  width: 40%;
 }
+
+.weatherText {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+}
+
+#condition{
+  width: 10em;
+  display: flex;
+  align-items: center;
+}
+
+#time {
+  /* align-items: flex-start; */
+  width: 7.5em;
+  display: flex;
+}
+
+.wx {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
 .nameContainer h2 {
   font-style: italic;
   color: rgba(211, 219, 4, 0.399);
@@ -47,8 +74,8 @@
 #globe {
   height: 60px;
   width: 60px;
-  margin-right: 5px;
-  margin-left: 5px;
+  /* margin-right: 20px; */
+  margin-left: 0;
   padding-top: 10px;
   animation: rotateOnAxis 5s linear infinite;
   
@@ -78,5 +105,19 @@
   }
   100% {
     transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  
+  .nameContainer h1 {
+    font-size: 20px;
+  }
+  .nameContainer h2 {
+    font-size: 14px;
+  }
+  .nameContainer h3,
+  .nameContainer p {
+    font-size: 12px;
   }
 }

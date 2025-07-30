@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding-top: 15%;
+  padding-bottom: 5%;
   background-color: rgba(1, 1, 50, 0.641);
 }
 h1 {
@@ -11,7 +12,7 @@ h1 {
 
 .banner {
   width: 100%;
-  margin-top: 5%;
+  margin-top: 10%;
   height: 100vh;
   text-align: center;
   overflow: hidden;
@@ -110,4 +111,41 @@ h1 {
 .technologies p {
     font-size: 10px;
 
+}
+
+@media screen and (max-width: 600px) {
+  .banner .slider {
+    width: 150px;
+    height: 180px;
+    top: 5%;
+    left: calc(50% - 75px);
+    transform: perspective(800px);
+  }
+
+  .banner .slider .item {
+    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+      translateZ(200px);
+  }
+
+  .banner .slider .item img {
+    height: 150px;
+  }
+
+  .projectText {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  .item a {
+    font-size: 9px;
+  }
+
+  .technologies p {
+    font-size: 9px;
+  }
+
+  #tech {
+    width: 16px;
+    height: 16px;
+  }
 }
