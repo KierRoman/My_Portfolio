@@ -33,7 +33,7 @@ function Orbit() {
         <div className="circle">
           <div className="orbiting-text">
             <div
-              className="orbiter pos-10"
+              className="orbiter pos-0"
               
             >
               <div className="counter-rotator">
@@ -47,7 +47,7 @@ function Orbit() {
               </div>
             </div>
             <div
-              className="orbiter pos-130"
+              className="orbiter pos-150"
               
             >
               <div className="counter-rotator"
@@ -65,7 +65,7 @@ function Orbit() {
               </div>
             </div>
             <div
-              className="orbiter pos-210"
+              className="orbiter pos-250"
             >
               <div className="counter-rotator">
                 <a href="mailto:kierroman@gmail.com" target="_blank">
@@ -73,19 +73,6 @@ function Orbit() {
                     className="logoImg"
                     src="/images/mailLogo.png"
                     alt="Mail Logo"
-                  />
-                </a>
-              </div>
-            </div>
-            <div
-              className="orbiter pos-270"
-            >
-              <div className="counter-rotator">
-                <a href="https://yourportfolio.com" target="_blank">
-                  <img
-                    className="logoImg"
-                    src="/images/portfolioLogo.png"
-                    alt="Portfolio Logo"
                   />
                 </a>
               </div>

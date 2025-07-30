@@ -30,6 +30,11 @@
   align-items: center;
   margin-top: 5em;
 }
+.nameContainer h2 {
+  font-style: italic;
+  color: rgba(211, 219, 4, 0.399);
+  margin: 0;
+}
 
 #locationContainer {
   font-family: "Courier New", Courier, monospace;
