@@ -7,7 +7,11 @@ function Hero() {
   const [locationVisible, setLocationVisible] = useState(false);
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState("");
+  const [time, setTime] = useState("");
+  const [timeZone, setTimeZone] = useState("");
 
+
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -15,36 +19,40 @@ function Hero() {
       },
       { threshold: 0.5 }
     );
-
+    
     if (locationRef.current) {
       observer.observe(locationRef.current);
     }
-
+    
     return () => {
       if (locationRef.current) {
         observer.unobserve(locationRef.current);
       }
     };
   }, []);
-
+  
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const { latitude, longitude } = position.coords;
         const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
-
+        
         try {
           const res = await fetch(
             `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`
           );
           const data = await res.json();
-
-          const utcSeconds = data.dt + data.timezone;
-          const localTime = new Date(utcSeconds * 1000).toLocaleTimeString([], {
+          
+          
+          const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          setTimeZone(browserTimeZone)
+          
+          const localTime = new Date().toLocaleTimeString("en-US", {
             hour: '2-digit',
             minute: '2-digit',
+            timeZone: browserTimeZone,
           });
-
+          
           setWeather({
             city: data.name,
             temp: Math.round(data.main.temp),
@@ -59,6 +67,24 @@ function Hero() {
       () => setError("Location permission denied.")
     );
   }, []);
+  
+  useEffect(() => {
+  if (!timeZone) return;
+
+  const updateTime = () => {
+    const now = new Date().toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZone,
+    });
+    setTime(now);
+  };
+
+  updateTime(); // Initial run
+  const interval = setInterval(updateTime, 60 * 1000); // Update every minute
+
+  return () => clearInterval(interval);
+}, [timeZone]);
   return (
     <>
       <div className="HeroContainer">
@@ -77,12 +103,12 @@ function Hero() {
               }`}
             >
               <div className="wx">
-                <h3 id="location">{weather?.city || "Killeen, Texas"}</h3>
+                <h3 id="location">{weather?.city || "...Loading"}</h3>
                             {weather && (
                 <div className="weatherText">
                   <div id='condition'>🌤 {weather.condition}, {weather.temp}°F </div>
                   <div id='time'>
-                    🕒 {weather.time}
+                    🕒 {time}
                   </div>
                 </div>
                             )}
