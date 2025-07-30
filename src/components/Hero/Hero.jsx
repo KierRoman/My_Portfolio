@@ -10,8 +10,6 @@ function Hero() {
   const [time, setTime] = useState("");
   const [timeZone, setTimeZone] = useState("");
 
-
-  
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -19,40 +17,40 @@ function Hero() {
       },
       { threshold: 0.5 }
     );
-    
+
     if (locationRef.current) {
       observer.observe(locationRef.current);
     }
-    
+
     return () => {
       if (locationRef.current) {
         observer.unobserve(locationRef.current);
       }
     };
   }, []);
-  
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const { latitude, longitude } = position.coords;
         const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
-        
+
         try {
           const res = await fetch(
             `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`
           );
           const data = await res.json();
-          
-          
-          const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-          setTimeZone(browserTimeZone)
-          
+
+          const browserTimeZone =
+            Intl.DateTimeFormat().resolvedOptions().timeZone;
+          setTimeZone(browserTimeZone);
+
           const localTime = new Date().toLocaleTimeString("en-US", {
-            hour: '2-digit',
-            minute: '2-digit',
+            hour: "2-digit",
+            minute: "2-digit",
             timeZone: browserTimeZone,
           });
-          
+
           setWeather({
             city: data.name,
             temp: Math.round(data.main.temp),
@@ -67,24 +65,36 @@ function Hero() {
       () => setError("Location permission denied.")
     );
   }, []);
-  
+
   useEffect(() => {
-  if (!timeZone) return;
+    if (!timeZone) return;
 
-  const updateTime = () => {
-    const now = new Date().toLocaleTimeString("en-US", {
-      hour: "2-digit",
-      minute: "2-digit",
-      timeZone,
-    });
-    setTime(now);
-  };
+    const updateTime = () => {
+      const now = new Date().toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone,
+      });
+      setTime(now);
+    };
 
-  updateTime(); // Initial run
-  const interval = setInterval(updateTime, 60 * 1000); // Update every minute
+    updateTime(); // Initial run
 
-  return () => clearInterval(interval);
-}, [timeZone]);
+    const now = new Date();
+    const delayUntilNextMinute = (60 - now.getSeconds()) * 1000;
+
+    const timeoutId = setTimeout(() => {
+      updateTime();
+      const intervalId = setInterval(updateTime, 60 * 1000); // Update every minute
+
+      timeoutId.intervalId = intervalId;
+    }, delayUntilNextMinute);
+
+    return () => {
+      clearInterval(timeoutId);
+      if (timeoutId.intervalId) clearInterval(timeoutId.intervalId);
+    };
+  }, [timeZone]);
   return (
     <>
       <div className="HeroContainer">
@@ -104,20 +114,23 @@ function Hero() {
             >
               <div className="wx">
                 <h3 id="location">{weather?.city || "...Loading"}</h3>
-                            {weather && (
-                <div className="weatherText">
-                  <div id='condition'>🌤 {weather.condition}, {weather.temp}°F </div>
-                  <div id='time'>
-                    🕒 {time}
+                {weather && (
+                  <div className="weatherText">
+                    <div id="condition">
+                      🌤 {weather.condition}, {weather.temp}°F
+                    </div>
                   </div>
-                </div>
-                            )}
+                )}
+                {time && (
+                  <div className="weatherText">
+                    <div id="time">🕒 {time}</div>
+                  </div>
+                )}
               </div>
               <span>
                 <img id="globe" src="images/gold-globe.png" alt=" Gold Globe" />
               </span>
             </div>
-
 
             {error && <p className="weatherText error">{error}</p>}
           </div>
