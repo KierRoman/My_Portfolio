@@ -27,13 +27,13 @@ function Hero() {
   return (
     <>
         <div className="HeroContainer">
-          {/* <Header /> */}
                 <div className="Hero">
           <div className="orbitContainer">
             <Orbit />
           </div>
           <div className="nameContainer">
             <h1>Kier Roman</h1>
+            <h2>Full Stack Web Developer</h2>
             <div
              id="locationContainer"
               ref={locationRef}

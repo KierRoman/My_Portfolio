@@ -66,9 +66,6 @@ let Projects = () => {
                         <h4>Okayest Fitness</h4>
                         <p>App that helps you track your fitness goals!</p>
                         <div className="technologies">
-                        <img id='tech' src="images/Javascript.png" alt="" />
-                        <img id='tech' src="images/HTML.png" alt="" />
-                        <img id='tech' src="images/CSS.png" alt="" />
                         <img id='tech' src="images/MongoDB.png" alt="" />
                         <img id='tech' src="images/Express.png" alt="" />
                         <img id='tech' src="images/NodeJS.png" alt="" />
@@ -84,8 +81,6 @@ let Projects = () => {
                         <h4>Wekida Event Planner</h4>
                         <p>Event planning app that helps you organize your next event!</p>
                         <div className="technologies">
-                        <img id='tech' src="images/Javascript.png" alt="" />
-                        <img id='tech' src="images/CSS.png" alt="" />
                         <img id='tech' src="images/MongoDB.png" alt="" />
                         <img id='tech' src="images/Express.png" alt="" />
                         <img id='tech' src="images/React.png" alt="" />
