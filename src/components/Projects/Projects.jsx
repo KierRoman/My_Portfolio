@@ -48,7 +48,7 @@ let Projects = () => {
               <div className="projectText">
                 <h4>ReelzAir</h4>
                 <p>
-                  Prototype developed with UI/UX designers to build a commerce
+                  Prototype mobile site developed with UI/UX designers to build a commerce
                   site for air cleaning units
                 </p>
                 <div className="technologies">
