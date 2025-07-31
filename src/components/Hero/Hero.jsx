@@ -36,7 +36,9 @@ function Hero() {
         // const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 
         try {
-         const res = await fetch(`/.netlify/functions/weather?lat=${latitude}&lon=${longitude}`);
+          const res = await fetch(
+            `/.netlify/functions/weather?lat=${latitude}&lon=${longitude}`
+          );
 
           const data = await res.json();
           console.log("Weather API response:", data);
@@ -45,72 +47,73 @@ function Hero() {
             console.error("Weather API returned error:", data.error);
             setError(data.error || "Weather API error");
             return;
-}
+          }
 
-           if (
-          data &&
-          data.main &&
-          typeof data.main.temp !== "undefined" &&
-          data.weather &&
-          Array.isArray(data.weather) &&
-          data.weather.length > 0
-        ) {
-          const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-          setTimeZone(browserTimeZone);
+          if (
+            data &&
+            data.main &&
+            typeof data.main.temp !== "undefined" &&
+            data.weather &&
+            Array.isArray(data.weather) &&
+            data.weather.length > 0
+          ) {
+            const browserTimeZone =
+              Intl.DateTimeFormat().resolvedOptions().timeZone;
+            setTimeZone(browserTimeZone);
 
-          const localTime = new Date().toLocaleTimeString("en-US", {
-            hour: "2-digit",
-            minute: "2-digit",
-            timeZone: browserTimeZone,
-          });
+            const localTime = new Date().toLocaleTimeString("en-US", {
+              hour: "2-digit",
+              minute: "2-digit",
+              timeZone: browserTimeZone,
+            });
 
-          setWeather({
-            city: data.name,
-            temp: Math.round(data.main.temp),
-            condition: data.weather[0].main,
-            time: localTime,
-          });
-        } else {
-          console.error("Weather data missing required fields");
-          setError("Failed to load weather data");
+            setWeather({
+              city: data.name,
+              temp: Math.round(data.main.temp),
+              condition: data.weather[0].main,
+              time: localTime,
+            });
+          } else {
+            console.error("Weather data missing required fields");
+            setError("Failed to load weather data");
+          }
+        } catch (err) {
+          console.error("Failed to fetch weather:", err);
+          setError("Weather unavailable.");
         }
-      } catch (err) {
-        console.error("Failed to fetch weather:", err);
-        setError("Weather unavailable.");
-      }
-    },
-    () => setError("Location permission denied.")
-  );
-}, []);
+      },
+      () => setError("Location permission denied.")
+    );
+  }, []);
 
   useEffect(() => {
-  if (!timeZone) return;
+    if (!timeZone) return;
 
-  const updateTime = () => {
-    const now = new Date().toLocaleTimeString("en-US", {
-      hour: "2-digit",
-      minute: "2-digit",
-      timeZone,
-    });
-    setTime(now);
-  };
+    const updateTime = () => {
+      const now = new Date().toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone,
+      });
+      setTime(now);
+    };
 
-  updateTime(); // Run once initially
-  const now = new Date();
-  const delay = (60 - now.getSeconds()) * 1000;
+    updateTime(); // Run once initially
+    const now = new Date();
+    const delay = (60 - now.getSeconds()) * 1000;
 
-  let intervalId;
+    let intervalId;
 
-  const timeoutId = setTimeout(() => {
-    updateTime();
-    intervalId = setInterval(updateTime, 60 * 1000);
-  }, delay);
+    const timeoutId = setTimeout(() => {
+      updateTime();
+      intervalId = setInterval(updateTime, 60 * 1000);
+    }, delay);
 
-  return () => {
-    clearTimeout(timeoutId);
-    if (intervalId) clearInterval(intervalId);
-  };
-}, [timeZone]);
+    return () => {
+      clearTimeout(timeoutId);
+      if (intervalId) clearInterval(intervalId);
+    };
+  }, [timeZone]);
   return (
     <>
       <div className="HeroContainer">
@@ -129,7 +132,11 @@ function Hero() {
               }`}
             >
               <div className="wx">
-                <h3 id="location">{weather?.city || "...Loading"}</h3>
+                <h3 id="location">
+                  {weather?.city && weather?.state
+                    ? `${weather.city}, ${weather.state}`
+                    : "...Loading"}
+                </h3>
                 {weather && (
                   <div className="weatherText">
                     <div id="condition">
