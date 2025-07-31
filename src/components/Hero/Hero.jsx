@@ -36,9 +36,8 @@ function Hero() {
         const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 
         try {
-          const res = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`
-          );
+         const res = await fetch(`/.netlify/functions/weather?lat=${latitude}&lon=${longitude}`);
+
           const data = await res.json();
 
           const browserTimeZone =
