@@ -41,6 +41,12 @@ function Hero() {
           const data = await res.json();
           console.log("Weather API response:", data);
 
+          if (res.status !== 200) {
+            console.error("Weather API returned error:", data.error);
+            setError(data.error || "Weather API error");
+            return;
+}
+
            if (
           data &&
           data.main &&
