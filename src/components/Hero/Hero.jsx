@@ -39,9 +39,17 @@ function Hero() {
          const res = await fetch(`/.netlify/functions/weather?lat=${latitude}&lon=${longitude}`);
 
           const data = await res.json();
+          console.log("Weather API response:", data);
 
-          const browserTimeZone =
-            Intl.DateTimeFormat().resolvedOptions().timeZone;
+           if (
+          data &&
+          data.main &&
+          typeof data.main.temp !== "undefined" &&
+          data.weather &&
+          Array.isArray(data.weather) &&
+          data.weather.length > 0
+        ) {
+          const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
           setTimeZone(browserTimeZone);
 
           const localTime = new Date().toLocaleTimeString("en-US", {
@@ -56,14 +64,18 @@ function Hero() {
             condition: data.weather[0].main,
             time: localTime,
           });
-        } catch (err) {
-          console.error("Failed to fetch weather:", err);
-          setError("Weather unavailable.");
+        } else {
+          console.error("Weather data missing required fields");
+          setError("Failed to load weather data");
         }
-      },
-      () => setError("Location permission denied.")
-    );
-  }, []);
+      } catch (err) {
+        console.error("Failed to fetch weather:", err);
+        setError("Weather unavailable.");
+      }
+    },
+    () => setError("Location permission denied.")
+  );
+}, []);
 
   useEffect(() => {
   if (!timeZone) return;
