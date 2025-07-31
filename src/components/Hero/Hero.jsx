@@ -8,7 +8,7 @@ function Hero() {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState("");
   const [time, setTime] = useState("");
-  const [timeZone, setTimeZone] = useState("");
+  const timeZone = "America/Chicago";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,58 +30,51 @@ function Hero() {
   }, []);
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      async (position) => {
-        const { latitude, longitude } = position.coords;
-        // const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
+    const latitude = 31.1171;
+    const longitude = -97.7278;
 
-        try {
-         const res = await fetch(`/.netlify/functions/weather?lat=${latitude}&lon=${longitude}`);
+    async function fetchWeather() {
+      try {
+        const res = await fetch(
+          `/.netlify/functions/weather?lat=${latitude}&lon=${longitude}`
+        );
+        const data = await res.json();
 
-          const data = await res.json();
-          console.log("Weather API response:", data);
+        if (res.status !== 200) {
+          setError(data.error || "Weather API error");
+          return;
+        }
 
-          if (res.status !== 200) {
-            console.error("Weather API returned error:", data.error);
-            setError(data.error || "Weather API error");
-            return;
-}
-
-           if (
+        if (
           data &&
-          data.main &&
-          typeof data.main.temp !== "undefined" &&
-          data.weather &&
+          data.main?.temp !== undefined &&
           Array.isArray(data.weather) &&
           data.weather.length > 0
         ) {
-          const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-          setTimeZone(browserTimeZone);
-
           const localTime = new Date().toLocaleTimeString("en-US", {
             hour: "2-digit",
             minute: "2-digit",
-            timeZone: browserTimeZone,
+            timeZone,
           });
 
           setWeather({
-            city: data.name,
+            city: "Killeen, TX",
             temp: Math.round(data.main.temp),
             condition: data.weather[0].main,
-            time: localTime,
           });
+
+          setTime(localTime);
         } else {
-          console.error("Weather data missing required fields");
           setError("Failed to load weather data");
         }
       } catch (err) {
-        console.error("Failed to fetch weather:", err);
+        console.error("Weather fetch error:", err);
         setError("Weather unavailable.");
       }
-    },
-    () => setError("Location permission denied.")
-  );
-}, []);
+    }
+
+    fetchWeather();
+  }, []);
 
   useEffect(() => {
   if (!timeZone) return;
@@ -129,7 +122,7 @@ function Hero() {
               }`}
             >
               <div className="wx">
-                <h3 id="location">{weather?.city || "...Loading"}</h3>
+                <h3 id="location">Killeen, TX</h3>
                 {weather && (
                   <div className="weatherText">
                     <div id="condition">

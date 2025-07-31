@@ -5,6 +5,7 @@ body {
   margin: 0;
   position: relative;
   overflow-x: hidden;
+  width: 100%;
 }
 
 .AppContainer {
@@ -17,7 +18,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-image: url('/images/Heaven.jpg');
   background-size: cover;
@@ -29,6 +30,7 @@ body {
 
 #root, .App {
   height: 100vh;
+  width: 100%;
   position: relative;
   z-index: 0;
   

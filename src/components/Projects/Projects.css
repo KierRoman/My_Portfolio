@@ -1,10 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .projects {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 15%;
   padding-bottom: 5%;
   background-color: rgba(1, 1, 50, 0.641);
+  box-sizing: border-box;
 }
 h1 {
   margin-bottom: 5px;
@@ -114,17 +121,22 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
   .banner .slider {
-    width: 150px;
-    height: 180px;
+    width: 100px;
+    height: 150px;
     top: 5%;
-    left: calc(50% - 75px);
+    left: calc(50% - 50px);
     transform: perspective(800px);
   }
 
   .banner .slider .item {
     transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
-      translateZ(200px);
+      translateZ(120px);
   }
 
   .banner .slider .item img {
@@ -147,5 +159,8 @@ h1 {
   #tech {
     width: 16px;
     height: 16px;
+  }
+  #work {
+    font-size: 20px;
   }
 }
