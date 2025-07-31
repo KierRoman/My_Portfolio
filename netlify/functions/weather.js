@@ -1,7 +1,7 @@
 export async function handler(event) {
   const API_KEY = process.env.WEATHER_API_KEY; // Set this in Netlify env
   const { lat, lon } = event.queryStringParameters;
-
+console.log("Using WEATHER_API_KEY:", process.env.WEATHER_API_KEY ? "Yes" : "No");
   if (!API_KEY) {
     return {
       statusCode: 500,
