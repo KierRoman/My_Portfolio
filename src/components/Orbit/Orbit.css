@@ -80,11 +80,14 @@
 .pos-0 {
   transform: rotate(0deg) translate(70px);
 }
-.pos-150 {
-  transform: rotate(150deg) translate(90px);
+.pos-90 {
+  transform: rotate(130deg) translate(80px);
 }
-.pos-250 {
-  transform: rotate(250deg) translate(110px);
+.pos-180 {
+  transform: rotate(210deg) translate(110px);
+}
+.pos-270 {
+  transform: rotate(280deg) translate(110px);
 }
 
 /* Rotates the image back to upright */
@@ -147,17 +150,17 @@
     top: 70%;
   }
   .pos-0 {
-    transform: rotate(0deg) translate(30px);
+    transform: rotate(40deg) translate(30px);
   }
-  .pos-150 {
-    transform: rotate(170deg) translate(55px);
+  .pos-90 {
+    transform: rotate(160deg) translate(60px);
   }
-  .pos-250 {
-    transform: rotate(250deg) translate(70px);
+  .pos-180 {
+    transform: rotate(220deg) translate(80px);
   }
-  /* .pos-270 {
-    transform: rotate(270deg) translate(60px);
-  } */
+  .pos-270 {
+    transform: rotate(290deg) translate(60px);
+  }
 
   .logoImg {
     width: 30px;

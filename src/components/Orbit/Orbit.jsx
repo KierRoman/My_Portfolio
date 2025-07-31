@@ -47,7 +47,7 @@ function Orbit() {
               </div>
             </div>
             <div
-              className="orbiter pos-150"
+              className="orbiter pos-90"
               
             >
               <div className="counter-rotator"
@@ -65,7 +65,7 @@ function Orbit() {
               </div>
             </div>
             <div
-              className="orbiter pos-250"
+              className="orbiter pos-180"
             >
               <div className="counter-rotator">
                 <a href="mailto:kierroman@gmail.com" target="_blank">
@@ -73,6 +73,19 @@ function Orbit() {
                     className="logoImg"
                     src="/images/mailLogo.png"
                     alt="Mail Logo"
+                  />
+                </a>
+              </div>
+            </div>
+            <div
+              className="orbiter pos-270"
+            >
+              <div className="counter-rotator">
+                <a href="/documents/Kier_Roman_Resume.pdf" target="_blank">
+                  <img
+                    className="logoImg"
+                    src="/images/portfolioLogo.png"
+                    alt="Portfolio Logo"
                   />
                 </a>
               </div>
