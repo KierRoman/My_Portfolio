@@ -33,7 +33,7 @@ function Hero() {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const { latitude, longitude } = position.coords;
-        const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
+        // const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 
         try {
          const res = await fetch(`/.netlify/functions/weather?lat=${latitude}&lon=${longitude}`);
@@ -66,34 +66,33 @@ function Hero() {
   }, []);
 
   useEffect(() => {
-    if (!timeZone) return;
+  if (!timeZone) return;
 
-    const updateTime = () => {
-      const now = new Date().toLocaleTimeString("en-US", {
-        hour: "2-digit",
-        minute: "2-digit",
-        timeZone,
-      });
-      setTime(now);
-    };
+  const updateTime = () => {
+    const now = new Date().toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZone,
+    });
+    setTime(now);
+  };
 
-    updateTime(); // Initial run
+  updateTime(); // Run once initially
+  const now = new Date();
+  const delay = (60 - now.getSeconds()) * 1000;
 
-    const now = new Date();
-    const delayUntilNextMinute = (60 - now.getSeconds()) * 1000;
+  let intervalId;
 
-    const timeoutId = setTimeout(() => {
-      updateTime();
-      const intervalId = setInterval(updateTime, 60 * 1000); // Update every minute
+  const timeoutId = setTimeout(() => {
+    updateTime();
+    intervalId = setInterval(updateTime, 60 * 1000);
+  }, delay);
 
-      timeoutId.intervalId = intervalId;
-    }, delayUntilNextMinute);
-
-    return () => {
-      clearInterval(timeoutId);
-      if (timeoutId.intervalId) clearInterval(timeoutId.intervalId);
-    };
-  }, [timeZone]);
+  return () => {
+    clearTimeout(timeoutId);
+    if (intervalId) clearInterval(intervalId);
+  };
+}, [timeZone]);
   return (
     <>
       <div className="HeroContainer">
