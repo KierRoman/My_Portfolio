@@ -27,6 +27,11 @@
     display: inline-block;
     transform-origin: center;
 }
+#email a {
+    font-style: italic;
+    text-decoration: none;
+    color: white;
+}
 
 #mail:hover {
     animation: rock .6s ease;

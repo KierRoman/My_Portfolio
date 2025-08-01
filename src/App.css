@@ -28,12 +28,21 @@ body {
   pointer-events: none;
 }
 
-#root, .App {
+img {
+  webkit-user-drag: none;   
+  -khtml-user-drag: none;   
+  -moz-user-select: none;    
+  -webkit-user-select: none; 
+  user-select: none;         
+  user-drag: none;           
+  pointer-events: auto;
+}
+
+  #root, .App {
   height: 100vh;
   width: 100%;
   position: relative;
   z-index: 0;
-  
 }
 
 .orbitContainer {

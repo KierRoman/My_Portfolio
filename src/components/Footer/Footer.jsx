@@ -8,7 +8,7 @@ let Footer = () => {
             <div id='work'>Let's work!</div>
             <div id="email"> 
                 <div id="mail">📧</div> 
-                kierroman@gmail.com
+                <a href="mailto:kierroman@gmail.com">kierroman@gmail.com</a>
                 </div>
         </div>
         </>

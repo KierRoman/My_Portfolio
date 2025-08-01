@@ -10,7 +10,7 @@ let Projects = () => {
         <div className="banner">
           <div className="slider" style={{ "--quantity": 5 }}>
             <div className="item" style={{ "--position": 1 }}>
-              <img src="images/AOT.jpg" alt="Attack Titan AOT"></img>
+              <img src="images/AOT.jpg" alt="Attack Titan AOT" draggable="false"></img>
               <a href="https://kierroman.github.io/AOT-Whack-a-Mole/" target="_blank" rel="noopener noreferrer">
                 Visit Website &rarr;
               </a>
@@ -18,14 +18,14 @@ let Projects = () => {
                 <h4>Whack A Titan</h4>
                 <p>Whack a Mole webgame with Attack on Titan theme!</p>
                 <div className="technologies">
-                  <img id="tech" src="images/Javascript.png" alt="" />
-                  <img id="tech" src="images/HTML.png" alt="" />
-                  <img id="tech" src="images/CSS.png" alt="" />
+                  <img id="tech" src="images/Javascript.png" alt="" draggable="false" />
+                  <img id="tech" src="images/HTML.png" alt="" draggable="false" />
+                  <img id="tech" src="images/CSS.png" alt="" draggable="false" />
                 </div>
               </div>
             </div>
             <div className="item" style={{ "--position": 2 }}>
-              <img src="images/MomMe.png" alt="MomMe App Screenshot"></img>
+              <img src="images/MomMe.png" alt="MomMe App Screenshot" draggable="false"></img>
               <a href="https://momme-3b787f93f096.herokuapp.com/" target="_blank" rel="noopener noreferrer">
                 Visit Website &rarr;
               </a>
@@ -33,15 +33,15 @@ let Projects = () => {
                 <h4>MomMe</h4>
                 <p>App that helps moms track all things baby!</p>
                 <div className="technologies">
-                  <img id="tech" src="images/Python.png" alt="" />
-                  <img id="tech" src="images/PostgreSQL.png" alt="" />
-                  <img id="tech" src="images/CSS.png" alt="" />
-                  <img id="tech" src="images/Django.png" alt="" />
+                  <img id="tech" src="images/Python.png" alt="" draggable="false" />
+                  <img id="tech" src="images/PostgreSQL.png" alt="" draggable="false" />
+                  <img id="tech" src="images/CSS.png" alt="" draggable="false" />
+                  <img id="tech" src="images/Django.png" alt="" draggable="false" />
                 </div>
               </div>
             </div>
             <div className="item" style={{ "--position": 3 }}>
-              <img src="images/ReelzAir.png" alt="ReelzAir App"></img>
+              <img src="images/ReelzAir.png" alt="ReelzAir App" draggable="false"></img>
               <a href="https://reelz-air-03741770c378.herokuapp.com/" target="_blank" rel="noopener noreferrer">
                 Visit Website &rarr;
               </a>
@@ -52,10 +52,10 @@ let Projects = () => {
                   site for air cleaning units
                 </p>
                 <div className="technologies">
-                  <img id="tech" src="images/Python.png" alt="" />
-                  <img id="tech" src="images/PostgreSQL.png" alt="" />
-                  <img id="tech" src="images/CSS.png" alt="" />
-                  <img id="tech" src="images/Django.png" alt="" />
+                  <img id="tech" src="images/Python.png" alt="" draggable="false" />
+                  <img id="tech" src="images/PostgreSQL.png" alt="" draggable="false" />
+                  <img id="tech" src="images/CSS.png" alt="" draggable="false" />
+                  <img id="tech" src="images/Django.png" alt="" draggable="false" />
                 </div>
               </div>
             </div>
@@ -63,6 +63,7 @@ let Projects = () => {
               <img
                 src="images/OkayestFitness.png"
                 alt="Okayest Fitness App Screenshot"
+                draggable="false"
               ></img>
               <a href="https://okayestfitness-2957c3ac2916.herokuapp.com/" target="_blank" rel="noopener noreferrer">
                 Visit Website &rarr;
@@ -71,14 +72,14 @@ let Projects = () => {
                 <h4>Okayest Fitness</h4>
                 <p>App that helps you track your fitness goals!</p>
                 <div className="technologies">
-                  <img id="tech" src="images/MongoDB.png" alt="" />
-                  <img id="tech" src="images/Express.png" alt="" />
-                  <img id="tech" src="images/NodeJS.png" alt="" />
+                  <img id="tech" src="images/MongoDB.png" alt="" draggable="false" />
+                  <img id="tech" src="images/Express.png" alt="" draggable="false" />
+                  <img id="tech" src="images/NodeJS.png" alt="" draggable="false" />
                 </div>
               </div>
             </div>
             <div className="item" style={{ "--position": 5 }}>
-              <img src="images/WekidaApp.png" alt="Wekida App Screenshot"></img>
+              <img src="images/WekidaApp.png" alt="Wekida App Screenshot" draggable="false"></img>
               <a href="https://wekida.netlify.app/" target="_blank" rel="noopener noreferrer">
                 Visit Website &rarr;
               </a>
@@ -88,10 +89,10 @@ let Projects = () => {
                   Event planning app that helps you organize your next event!
                 </p>
                 <div className="technologies">
-                  <img id="tech" src="images/MongoDB.png" alt="" />
-                  <img id="tech" src="images/Express.png" alt="" />
-                  <img id="tech" src="images/React.png" alt="" />
-                  <img id="tech" src="images/NodeJS.png" alt="" />
+                  <img id="tech" src="images/MongoDB.png" alt="" draggable="false" />
+                  <img id="tech" src="images/Express.png" alt="" draggable="false" />
+                  <img id="tech" src="images/React.png" alt="" draggable="false" />
+                  <img id="tech" src="images/NodeJS.png" alt="" draggable="false" />
                 </div>
               </div>
             </div>

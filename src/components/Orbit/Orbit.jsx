@@ -20,6 +20,7 @@ function Orbit() {
   return (
     <>
       <div className="text-spinner-wrapper">
+          <div className="avatar-circle"></div>
         <svg className="orbit-path" width="200" height="200">
           <circle
             cx="100"
@@ -37,9 +38,10 @@ function Orbit() {
               
             >
               <div className="counter-rotator">
-                <a href="https://github.com/KierRoman" target="_blank">
+                <a href="https://github.com/KierRoman" target="_blank" draggable="false">
                   <img
                     className="logoImg"
+                    draggable="false"
                     src="/images/githubLogo.png"
                     alt="GitHub Logo"
                   />
@@ -54,10 +56,11 @@ function Orbit() {
               >
                 <a
                   href="https://linkedin.com/in/kier-roman-245844220"
-                  target="_blank"
+                  target="_blank" draggable="false"
                 >
                   <img
                     className="logoImg"
+                    draggable="false"
                     src="/images/linkedinLogo.jpg"
                     alt="LinkedIn Logo"
                   />
@@ -68,9 +71,10 @@ function Orbit() {
               className="orbiter pos-180"
             >
               <div className="counter-rotator">
-                <a href="mailto:kierroman@gmail.com" target="_blank">
+                <a href="mailto:kierroman@gmail.com" target="_blank" draggable="false">
                   <img
                     className="logoImg"
+                    draggable="false"
                     src="/images/mailLogo.png"
                     alt="Mail Logo"
                   />
@@ -81,9 +85,10 @@ function Orbit() {
               className="orbiter pos-270"
             >
               <div className="counter-rotator">
-                <a href="/documents/Kier_Roman_Resume.pdf" target="_blank">
+                <a href="/documents/Kier_Roman_Resume.pdf" target="_blank" draggable="false">
                   <img
                     className="logoImg"
+                    draggable="false"
                     src="/images/portfolioLogo.png"
                     alt="Portfolio Logo"
                   />

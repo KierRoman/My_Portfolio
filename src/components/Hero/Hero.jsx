@@ -137,7 +137,7 @@ function Hero() {
                 )}
               </div>
               <span>
-                <img id="globe" src="images/gold-globe.png" alt=" Gold Globe" />
+                <img id="globe" src="images/gold-globe.png" alt=" Gold Globe" draggable="false" />
               </span>
             </div>
 

@@ -3,6 +3,17 @@
   margin: 0;
   padding: 0;
 }
+
+a {
+  -webkit-user-drag: none;
+  user-drag: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .projects {
   width: 100vw;
   display: flex;
@@ -69,6 +80,13 @@ h1 {
 
 .item {
   height: max-content;
+  -webkit-user-drag: none;
+  user-drag: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .item a {
@@ -79,6 +97,7 @@ h1 {
     color: white;
     display: inline-block;
     transition: all 0.4s ease;
+  
 }
 
 .item a:hover {
