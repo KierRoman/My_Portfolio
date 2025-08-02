@@ -15,7 +15,7 @@ let Projects = () => {
                 Visit Website &rarr;
               </a>
               <div className="projectText">
-                <h4>Whack A Titan</h4>
+                <h4>- Whack A Titan -</h4> <br/>
                 <p>Whack a Mole webgame with Attack on Titan theme!</p>
                 <div className="technologies">
                   <img id="tech" src="images/Javascript.png" alt="" draggable="false" />
@@ -30,7 +30,7 @@ let Projects = () => {
                 Visit Website &rarr;
               </a>
               <div className="projectText">
-                <h4>MomMe</h4>
+                <h4>- MomMe -</h4> <br/>
                 <p>App that helps moms track all things baby!</p>
                 <div className="technologies">
                   <img id="tech" src="images/Python.png" alt="" draggable="false" />
@@ -46,7 +46,7 @@ let Projects = () => {
                 Visit Website &rarr;
               </a>
               <div className="projectText">
-                <h4>ReelzAir</h4>
+                <h4>- ReelzAir -</h4> <br/>
                 <p>
                   Prototype mobile site developed with UI/UX designers to build a commerce
                   site for air cleaning units
@@ -69,7 +69,7 @@ let Projects = () => {
                 Visit Website &rarr;
               </a>
               <div className="projectText">
-                <h4>Okayest Fitness</h4>
+                <h4>- Okayest Fitness -</h4> <br/>
                 <p>App that helps you track your fitness goals!</p>
                 <div className="technologies">
                   <img id="tech" src="images/MongoDB.png" alt="" draggable="false" />
@@ -84,7 +84,7 @@ let Projects = () => {
                 Visit Website &rarr;
               </a>
               <div className="projectText">
-                <h4>Wekida Event Planner</h4>
+                <h4>- Wekida Event Planner -</h4> <br/>
                 <p>
                   Event planning app that helps you organize your next event!
                 </p>
